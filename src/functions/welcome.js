@@ -3,7 +3,7 @@ const Discord = require("discord.js")
 async function welcomeMessage(client, message, member, channelID, embed, CustomMessage) { //embed true or false
     if (!message) throw new TypeError("\"message\" is not defined.")
     if (!channelID) throw new TypeError("\"channelID\" has not been provided.")
-    if (!guildMember) throw new TypeError("\"member\" is not defined.")
+    if (!member) throw new TypeError("\"member\" is not defined.")
     if (!client) throw new TypeError("\"client\" is not defined.")
     const channel = client.guilds.channels.cache.get(channelID)
 
