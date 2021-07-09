@@ -1,0 +1,75 @@
+const Discord = require('discord.js');
+class Moderation {
+    //----------------------------------------------------------------
+    //BAN FUNCTION
+    //----------------------------------------------------------------
+    async ban(message, userID, options = {}) {
+        if (!message) throw new TypeError("\"message\" is not defined.")
+        if (!userID) throw new TypeError("\"userID\" has not been provided.")
+
+        if (message.member.permissions.has("BAN_MEMBERS")) {
+            return message.channel.send("You do not have permission to ban members.")
+        }
+
+        try {
+            const user = message.guild.members.cache.get(userID)
+            if (!user.bannable) return message.channel.send('I could not ban that member due to role hierarchy')
+
+            user.ban()
+            if (!options) {
+                return message.channel.send("User has been banned");
+            }
+
+            else {
+                const m = new Discord.MessageEmbed()
+                    .setTitle(options.title || "User Banned")
+                    .setDescription(options.reason || `${user.user.tag} has been banned from ${message.guild}`)
+                    .setColor(options.color || "RANDOM");
+                return message.channel.send(m);
+            }
+            
+        } catch (e) {
+            console.log(e);
+        }
+
+
+
+    }
+
+    //----------------------------------------------------------------
+    //KICK FUNCTION
+    //----------------------------------------------------------------
+    async kick(message, userID, options = {}) {
+        if (!message) throw new TypeError("\"message\" is not defined.")
+        if (!userID) throw new TypeError("\"userID\" has not been provided.")
+
+        if (message.member.permissions.has("KICK_MEMBERS")) {
+            return message.channel.send("You do not have permission to kick members.")
+        }
+
+        try {
+            const user = message.guild.members.cache.get(userID)
+            if (!user.kickable) return message.channel.send('I could not kick that member due to role hierarchy')
+
+            user.kick()
+            if (!options) {
+                return message.channel.send("User has been kicked");
+            }
+
+            else {
+                const m = new Discord.MessageEmbed()
+                    .setTitle(options.title || "User Kicked")
+                    .setDescription(options.reason || `${user.user.tag} has been kicked from ${message.guild}`)
+                    .setColor(options.color || "RANDOM");
+                return message.channel.send(m);
+            }
+            
+        } catch (e) {
+            console.log(e);
+        }
+    }
+    //----------------------------------------------------------------
+    //ADD MORE FUNCTIONS BELOW HERE
+    //----------------------------------------------------------------
+}
+module.exports = Moderation;
