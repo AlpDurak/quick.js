@@ -23,6 +23,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "anime-images-api": "^2.0.0",
     "convert-ms": "0.0.6",
     "discord.js": "^12.5.3"
   }
