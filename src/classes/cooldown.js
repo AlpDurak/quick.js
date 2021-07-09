@@ -1,7 +1,28 @@
-const { MessageEmbed } = require('discord.js');
+const {MessageEmbed, Collection } = require('discord.js');
 
 class Cooldown {
-    async set(client, message, userID) {
+    async set(message, cooldownTime) {
+        if (!client) throw new TypeError('"client" is not defined');
+        if (!message) throw new TypeError('"message" is not defined');
+        if (!userID) throw new TypeError('"userID" has not been provided.');
+
+        const sentRecently = new Map();
+
+
+        const currentTime = Data.now();
+        const cooldownAmount = (cooldownTime) * 1000;
+        if (sentRecently(message.author.id)) {
+            return message.channel.send(`Please wait ${cooldownAmount}`)
+        } else {
+            //Adding the user
+            sentRecently.add(message.author.id);
+            setTimeout(() => {
+                //Removing the user
+                sentRecently.delete(message.author.id)
+            }, cooldownAmount)
+        }
+
         
     }
 }
+module.exports = Cooldown;
