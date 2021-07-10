@@ -91,7 +91,7 @@ client.login("TOKEN");
 Cooldown Functions:
 | Syntax 	| Description                        	| Example                                                                                      	|
 |--------	|------------------------------------	|----------------------------------------------------------------------------------------------	|
-| set()  	| Sets the cooldown for that command 	| quick.cooldown(<message>, cooldownAmount) //"message" is your message event parameter name 	|
+| set()  	| Sets the cooldown for that command 	| quick.cooldown(message, cooldownAmount) //"message" is your message event parameter name 	|
 
 ###### Images
 ```js
