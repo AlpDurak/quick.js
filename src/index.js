@@ -10,7 +10,6 @@ module.exports.antiSwear = require('./functions/antiswear');
 //CLASSES
 //----------------------------------------------------------------
 module.exports.Moderation = require('./classes/moderation');
-module.exports.Cooldown = require('./classes/cooldown');
 module.exports.Images = require('./classes/images');
 module.exports.Games = require('./classes/games');
 module.exports.Ticket = require('./classes/tickets');
