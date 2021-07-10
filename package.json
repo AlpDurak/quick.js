@@ -1,5 +1,5 @@
 {
-  "name": "quick-djs",
+  "name": "quick.djs",
   "version": "0.0.1",
   "description": "A simple to use package to make writing in Discord.js much simpler",
   "main": "src/index.js",
@@ -25,6 +25,7 @@
   "dependencies": {
     "anime-images-api": "^2.0.0",
     "convert-ms": "0.0.6",
-    "discord.js": "^12.5.3"
+    "discord.js": "^12.5.3",
+    "snakecord": "^1.0.7"
   }
 }

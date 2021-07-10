@@ -4,7 +4,7 @@
 
 const AnimeImages = require('anime-images-api');
 const API = new AnimeIMages()
-class images {
+class Images {
     //------------------------------
     //HUG
     //------------------------------
@@ -96,3 +96,4 @@ class images {
         getIMG()
     }
 }
+module.exports = Images;
