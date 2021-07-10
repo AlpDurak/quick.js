@@ -4,7 +4,7 @@ class Ticket {
     //NEW TICKET
     //----------------------------------------------------------------
 
-    async new(client, message, args, Discord, staffID) {
+    async new(client, message, args, staffID) {
         const staff = message.guild.roles.cache.get(staffID)
         const channel = await message.guild.channels.create(
             `ticket: ${message.author.tag}`
@@ -98,7 +98,7 @@ class Ticket {
     //----------------------------------------------------------------
     //RENAME TICKET
     //----------------------------------------------------------------
-    async rename(client, message, args, Discord) {
+    async rename(client, message, args) {
         if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('You can not preform this action.');
         const name = args.splice(0).join("-")
         message.channel.setName(name)

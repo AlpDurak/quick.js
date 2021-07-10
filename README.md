@@ -6,7 +6,7 @@
     * [Cooldown](https://www.npmjs.com/package/quick.djs#cooldown)
     * [Images](https://www.npmjs.com/package/quick.djs#images)
     * [Games](https://www.npmjs.com/package/quick.djs#games)
-    * [Tickets](https://www.npmjs.com/package/quick.djs#tickets)
+    * [Tickets](https://www.npmjs.com/package/quick.djs#ticket)
 * [Contribute](https://www.npmjs.com/package/quick.djs#contribute)
 * [Credits](https://www.npmjs.com/package/quick.djs#credits)
 
