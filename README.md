@@ -57,9 +57,9 @@ client.login("TOKEN");
 Moderation Functions:
 | Syntax  	| Description     	| Example                                                                                                                                             	|
 |---------	|-----------------	|-----------------------------------------------------------------------------------------------------------------------------------------------------	|
-| ban()   	| Bans a member   	| <quick>.ban(<message>, 'user id', {title: 'embed title',  reason: 'reason', color: 'hex color'}) //<message> is your message event parameter name.  	|
-| unban() 	| Unbans a member 	| <quick>.unban(<message>, 'user id') //<message> is your message event parameter name.                                                               	|
-| kick()  	| Kicks a member  	| <quick>.kick(<message>, 'user id', {title: 'embed title', reason: 'reason', color: 'hex color' //<message> is your message event parameter name.    	|
+| ban()   	| Bans a member   	| quick.ban(message, 'user id', {title: 'embed title',  reason: 'reason', color: 'hex color'}) //"message" is your message event parameter name.  	|
+| unban() 	| Unbans a member 	| quick.unban(message, 'user id') //"message" is your message event parameter name.                                                               	|
+| kick()  	| Kicks a member  	| quick.kick(message, 'user id', {title: 'embed title', reason: 'reason', color: 'hex color' //"message" is your message event parameter name.    	|
 
 **More to come!**
 
@@ -91,7 +91,7 @@ client.login("TOKEN");
 Cooldown Functions:
 | Syntax 	| Description                        	| Example                                                                                      	|
 |--------	|------------------------------------	|----------------------------------------------------------------------------------------------	|
-| set()  	| Sets the cooldown for that command 	| <quick>.cooldown(<message>, cooldownAmount) //<message> is your message event parameter name 	|
+| set()  	| Sets the cooldown for that command 	| quick.cooldown(<message>, cooldownAmount) //"message" is your message event parameter name 	|
 
 ###### Images
 ```js
@@ -134,7 +134,7 @@ client.on("message", message => {
 ```
 | Syntax  	| Description                   	| Example                                                                   	|
 |---------	|-------------------------------	|---------------------------------------------------------------------------	|
-| snake() 	| Setup a fun little snake game 	| <quick>.snake(<message>) //<message> is your message event parameter name 	|
+| snake() 	| Setup a fun little snake game 	| quick.snake(message) //"message" is your message event parameter name 	|
 
 ###### Ticket
 ```js
@@ -164,9 +164,9 @@ Ticket Functions:
 
 | Syntax   	| Description              	| Example                                                                                                           	|
 |----------	|--------------------------	|-------------------------------------------------------------------------------------------------------------------	|
-| new()    	| Creates a new Ticket.    	| <quick>.new(<message>, 'staff role id'  {title: 'title', description: 'embed description', color: 'hex color'}) 	|
-| rename() 	| Renames the channel name 	| <quick>.rename(<message>, 'channelName')  //<message> is what you have defined "message" as in your message event. 	|
-| delete() 	| Deletes the channel      	| <quick>.delete(<message>) //<message> is what you have defined "message" as in your message event.    
+| new()    	| Creates a new Ticket.    	| quick.new(message, 'staff role id'  {title: 'title', description: 'embed description', color: 'hex color'}) 	|
+| rename() 	| Renames the channel name 	| quick.rename(message, 'channelName')  //"message" is what you have defined "message" as in your message event. 	|
+| delete() 	| Deletes the channel      	| quick.delete(message) //"message" is what you have defined "message" as in your message event.    
 
 # Contribute
 Feeling good and want to contribute? Join the [Discord server](https://discord.gg/qwQfZsZ878)
