@@ -6,6 +6,7 @@
     * [Cooldown](https://www.npmjs.com/package/quick.djs#cooldown)
     * [Images](https://www.npmjs.com/package/quick.djs#images)
     * [Games](https://www.npmjs.com/package/quick.djs#games)
+    * [Tickets](https://www.npmjs.com/package/quick.djs#tickets)
 * [Contribute](https://www.npmjs.com/package/quick.djs#contribute)
 * [Credits](https://www.npmjs.com/package/quick.djs#credits)
 
@@ -30,6 +31,7 @@ yarn add quick.djs
 ###### Moderation
 ```js
 const Discord = require('discord.js');
+const client = new Discord.Client();
 const { Moderation } = require('quick.djs');
 
 const moderation = new Moderation();
@@ -63,6 +65,7 @@ Moderation Functions:
 ###### Cooldown
 ```js
 const Discord = require('discord.js');
+const client = new Discord.Client();
 const { Cooldown } = require('quick.djs');
 
 const cooldown = new Cooldown();
@@ -117,6 +120,9 @@ Image Functions:
 //Basic Syntax
 
 //REST OF YOUR CODE ABOVE
+const Discord = require("discord.js");
+const client = new Discord.Client();
+
 const { Games } = require("quick.djs");
 client.on("message", message => {
     if (message.content === "snake") {
@@ -129,6 +135,38 @@ Game Functions:
 | Syntax  	| Description                        	|
 |---------	|------------------------------------	|
 | snake() 	| Generates a fun little snake game. 	|
+
+###### Ticket
+```js
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const { Ticket } = require('quick.djs');
+
+const ticket = new Ticket();
+const prefix = "!"
+client.on("ready", ready => {
+    console.log("Online!");
+});
+    
+    const args = message.content.slice(prefix.length).trim().split(/ +/);
+    const command = args.shift().toLowerCase();
+
+client.on("message", message => {
+    if (message.author.bot || !message.content.startsWith(prefix)) return;
+
+    if (command === "ticket") {
+        ticket.new(client, message, args, 'STAFF ROLE ID HERE') 
+    }
+});
+client.login("TOKEN");
+```
+Ticket Functions:
+
+| Syntax   	| Description              	|
+|----------	|--------------------------	|
+| new()    	| Creates a new Ticket.    	|
+| rename() 	| Renames the channel name 	|
+| delete() 	| Deletes the channel      	|
 
 # Contribute
 Feeling good and want to contribute? Join the [Discord server](https://discord.gg/qwQfZsZ878)

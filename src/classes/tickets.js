@@ -1,3 +1,4 @@
+const Discord = require('discord.js');
 class Ticket {
     //----------------------------------------------------------------
     //NEW TICKET
@@ -105,9 +106,12 @@ class Ticket {
     //----------------------------------------------------------------
     //DELETE TICKET
     //----------------------------------------------------------------
-    async delete() {
+    async delete(message) {
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('You can not preform this action.');
          message.channel.send("This channel will be removed in 5 seconds");
          setTimeout(() => message.channel.delete(), 5000);
     }
+    
+    
 }
+module.exports = Ticket;
