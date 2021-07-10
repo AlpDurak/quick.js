@@ -7,7 +7,7 @@ class Moderation {
         if (!message) throw new TypeError("\"message\" is not defined.")
         if (!userID) throw new TypeError("\"userID\" has not been provided.")
 
-        if (message.member.permissions.has("BAN_MEMBERS")) {
+        if (!message.member.permissions.has("BAN_MEMBERS")) {
             return message.channel.send("You do not have permission to ban members.")
         }
 
