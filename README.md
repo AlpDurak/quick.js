@@ -3,7 +3,6 @@
 * [Installation](https://www.npmjs.com/package/quick.djs#installation)
 * [Functions and Classes](https://www.npmjs.com/package/quick.djs#functions-and-classes)
     * [Moderation](https://www.npmjs.com/package/quick.djs#moderation)
-    * [Cooldown](https://www.npmjs.com/package/quick.djs#cooldown)
     * [Images](https://www.npmjs.com/package/quick.djs#images)
     * [Games](https://www.npmjs.com/package/quick.djs#games)
     * [Tickets](https://www.npmjs.com/package/quick.djs#ticket)
@@ -63,35 +62,6 @@ Moderation Functions:
 
 **More to come!**
 
-###### Cooldown
-```js
-const Discord = require('discord.js');
-const client = new Discord.Client();
-const { Cooldown } = require('quick.djs');
-
-const cooldown = new Cooldown();
-const prefix = "!"
-client.on("ready", ready => {
-    console.log("Online!");
-});
-    
-    const args = message.content.slice(prefix.length).trim().split(/ +/);
-    const command = args.shift().toLowerCase();
-
-client.on("message", message => {
-    if (message.author.bot || !message.content.startsWith(prefix)) return;
-
-    if (command === "hello") {
-        cooldown.set(message, 5) // 5 meaning 5 seconds.
-        message.channel.send("HELLO");
-    }
-});
-client.login("TOKEN");
-```
-Cooldown Functions:
-| Syntax 	| Description                        	| Example                                                                                      	|
-|--------	|------------------------------------	|----------------------------------------------------------------------------------------------	|
-| set()  	| Sets the cooldown for that command 	| quick.cooldown(message, cooldownAmount) //"message" is your message event parameter name 	|
 
 ###### Images
 ```js
