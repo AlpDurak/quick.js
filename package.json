@@ -1,6 +1,6 @@
 {
   "name": "quick.djs",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha.01",
   "description": "A simple to use package to make writing in Discord.js much simpler",
   "main": "src/index.js",
   "scripts": {

@@ -1,15 +1,14 @@
 const {MessageEmbed, Collection } = require('discord.js');
 const ms = require('convert-ms');
 class Cooldown {
-    async set(message, cooldownTime) {
-        if (!client) throw new TypeError('"client" is not defined');
+    async set(message, userID, cooldownTime = 3) {
         if (!message) throw new TypeError('"message" is not defined');
         if (!userID) throw new TypeError('"userID" has not been provided.');
 
-        const sentRecently = new Map();
+        const sentRecently = new Set();
 
 
-        const currentTime = Data.now();
+        const currentTime = Date.now();
         const cooldownAmount = (cooldownTime) * 1000;
         if (sentRecently(message.author.id)) {
             return message.channel.send(`Please wait ${ms.toHMS(cooldownAmount)} before using that again.`)
