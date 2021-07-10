@@ -69,6 +69,35 @@ class Moderation {
         }
     }
     //----------------------------------------------------------------
+    //Unban
+    //----------------------------------------------------------------
+    async unban(client, message, Discord) {
+          const args = message.content.slice(prefix.length).split(/ +/);
+          const userID = args[0]
+        if (!userID) return message.channel.send("You need to porvide a user ID");
+        message.guild.members.unban(userID).then(() => {
+            const unbanEmbed = new Discord.MessageEmbed()
+                .setTitle("Member Unbanned")
+                .setDescription(
+                    `<@${userID}> was unbanned by ${message.author}`
+                )
+                .setThumbnail(message.guild.iconURL())
+                .setTimestamp()
+                .setColor("RANDOM");
+            message.channel.send(unbanEmbed)
+            message.delete()
+        }).catch((err) => {
+            console.log(err)
+            const errorEmbed = new Discord.MessageEmbed()
+                .setTitle('An error has occured')
+                .setDescription(err.message)
+                .setTimestamp()
+                .setColor("RANDOM")
+                .setThumbnail(message.guild.iconURL())
+            message.channel.send(errorEmbed)
+        })
+    }
+    //----------------------------------------------------------------
     //ADD MORE FUNCTIONS BELOW HERE
     //----------------------------------------------------------------
 }
