@@ -17,3 +17,4 @@ class Logs {
     } // End Join
 
 }
+module.exports = Logs;
