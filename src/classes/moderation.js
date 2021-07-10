@@ -22,9 +22,9 @@ class Moderation {
 
             else {
                 const m = new Discord.MessageEmbed()
-                    .setTitle(options.title || "User Banned")
-                    .setDescription(options.reason || `${user.user.tag} has been banned from ${message.guild}`)
-                    .setColor(options.color || "RANDOM");
+                    .setTitle(options.title ? options.title : "User Banned")
+                    .setDescription(options.reason ? options.reason :`${user.user.tag} has been banned from ${message.guild}`)
+                    .setColor(options.color ? options.color : "RANDOM");
                 return message.channel.send(m);
             }
             
@@ -58,9 +58,9 @@ class Moderation {
 
             else {
                 const m = new Discord.MessageEmbed()
-                    .setTitle(options.title || "User Kicked")
-                    .setDescription(options.reason || `${user.user.tag} has been kicked from ${message.guild}`)
-                    .setColor(options.color || "RANDOM");
+                    .setTitle(options.title ? options.title : "User Kicked")
+                    .setDescription(options.reason ? options.reason : `${user.user.tag} has been kicked from ${message.guild}`)
+                    .setColor(options.color ? options.color :  "RANDOM");
                 return message.channel.send(m);
             }
             
@@ -71,9 +71,8 @@ class Moderation {
     //----------------------------------------------------------------
     //Unban
     //----------------------------------------------------------------
-    async unban(client, message, Discord) {
+    async unban(message, userID) {
           const args = message.content.slice(prefix.length).split(/ +/);
-          const userID = args[0]
         if (!userID) return message.channel.send("You need to porvide a user ID");
         message.guild.members.unban(userID).then(() => {
             const unbanEmbed = new Discord.MessageEmbed()

@@ -1,3 +1,4 @@
+const Discord = require('discord.js');
 class Logs {
     async join(Discord, client, member, channelID) {
         if (!Discord) throw new TypeError("\"Discord\" is not defined")
@@ -15,6 +16,7 @@ class Logs {
             .setColor("RANDOM")
         channel.send(embed)
     } // End Join
+    
 
 }
 module.exports = Logs;

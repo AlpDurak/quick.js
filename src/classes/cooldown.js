@@ -1,5 +1,5 @@
 const {MessageEmbed, Collection } = require('discord.js');
-
+const ms = require('convert-ms');
 class Cooldown {
     async set(message, cooldownTime) {
         if (!client) throw new TypeError('"client" is not defined');
@@ -12,7 +12,7 @@ class Cooldown {
         const currentTime = Data.now();
         const cooldownAmount = (cooldownTime) * 1000;
         if (sentRecently(message.author.id)) {
-            return message.channel.send(`Please wait ${cooldownAmount}`)
+            return message.channel.send(`Please wait ${ms.toHMS(cooldownAmount)} before using that again.`)
         } else {
             //Adding the user
             sentRecently.add(message.author.id);

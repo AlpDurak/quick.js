@@ -55,10 +55,11 @@ client.on("message", message => {
 client.login("TOKEN");
 ``` 
 Moderation Functions:
-| Function | Description |
-| --- | ----------- |
-| ban() | Bans a specified member from the server. |
-| kick() | Kicks a specified member from the server. |
+| Syntax  	| Description     	| Example                                                                                                                                             	|
+|---------	|-----------------	|-----------------------------------------------------------------------------------------------------------------------------------------------------	|
+| ban()   	| Bans a member   	| <quick>.ban(<message>, 'user id', {title: 'embed title',  reason: 'reason', color: 'hex color'}) //<message> is your message event parameter name.  	|
+| unban() 	| Unbans a member 	| <quick>.unban(<message>, 'user id') //<message> is your message event parameter name.                                                               	|
+| kick()  	| Kicks a member  	| <quick>.kick(<message>, 'user id', {title: 'embed title', reason: 'reason', color: 'hex color' //<message> is your message event parameter name.    	|
 
 **More to come!**
 
@@ -88,9 +89,9 @@ client.on("message", message => {
 client.login("TOKEN");
 ```
 Cooldown Functions:
-| Syntax 	| Description                                	|
-|--------	|--------------------------------------------	|
-| set()  	| Sets the cooldown amount for that command. 	|
+| Syntax 	| Description                        	| Example                                                                                      	|
+|--------	|------------------------------------	|----------------------------------------------------------------------------------------------	|
+| set()  	| Sets the cooldown for that command 	| <quick>.cooldown(<message>, cooldownAmount) //<message> is your message event parameter name 	|
 
 ###### Images
 ```js
@@ -131,10 +132,9 @@ client.on("message", message => {
     }
 })
 ```
-Game Functions:
-| Syntax  	| Description                        	|
-|---------	|------------------------------------	|
-| snake() 	| Generates a fun little snake game. 	|
+| Syntax  	| Description                   	| Example                                                                   	|
+|---------	|-------------------------------	|---------------------------------------------------------------------------	|
+| snake() 	| Setup a fun little snake game 	| <quick>.snake(<message>) //<message> is your message event parameter name 	|
 
 ###### Ticket
 ```js
@@ -162,11 +162,11 @@ client.login("TOKEN");
 ```
 Ticket Functions:
 
-| Syntax   	| Description              	|
-|----------	|--------------------------	|
-| new()    	| Creates a new Ticket.    	|
-| rename() 	| Renames the channel name 	|
-| delete() 	| Deletes the channel      	|
+| Syntax   	| Description              	| Example                                                                                                           	|
+|----------	|--------------------------	|-------------------------------------------------------------------------------------------------------------------	|
+| new()    	| Creates a new Ticket.    	| <quick>.new(<message>, 'staff role id'  {title: 'title', description: 'embed description', color: 'hex color'}) 	|
+| rename() 	| Renames the channel name 	| <quick>.rename(<message>, 'channelName')  //<message> is what you have defined "message" as in your message event. 	|
+| delete() 	| Deletes the channel      	| <quick>.delete(<message>) //<message> is what you have defined "message" as in your message event.    
 
 # Contribute
 Feeling good and want to contribute? Join the [Discord server](https://discord.gg/qwQfZsZ878)

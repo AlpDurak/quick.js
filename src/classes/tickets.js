@@ -4,7 +4,7 @@ class Ticket {
     //NEW TICKET
     //----------------------------------------------------------------
 
-    async new(client, message, args, staffID) {
+    async new(message, staffID, options = {}) {
         const staff = message.guild.roles.cache.get(staffID)
         const channel = await message.guild.channels.create(
             `ticket: ${message.author.tag}`
@@ -23,13 +23,13 @@ class Ticket {
             VIEW_CHANNEL: true,
         });
         const ticketEmbed = new Discord.MessageEmbed()
-            .setTitle(`${message.author.tag}'s ticket`)
+            .setTitle(options.title ? options.title : `${message.author.tag}'s ticket`)
             .setDescription(
-                `Thank you for opening a ticket ${message.author} a staff member will be with you shortly!`
+                options.description ? options.description : `Thank you for opening a ticket ${message.author} a staff member will be with you shortly!`
             )
             .setThumbnail(message.guild.iconURL())
             .setTimestamp()
-            .setColor("RANDOM");
+            .setColor(options.color ? options.color : "RANDOM");
         const recationMessage = await channel.send(ticketEmbed);
         try {
             await recationMessage.react("🔒");
@@ -58,7 +58,7 @@ class Ticket {
                         .setTimestamp()
                         .setThumbnail(message.guild.iconURL())
                         .setFooter(`Channel ID: ${channel.id}`)
-                        .setColor("RANDOM")
+                        .setColor(options.color ? options.color : "RANDOM")
 
                     channel.updateOverwrite(message.author, {
                         SEND_MESSAGES: false,
@@ -98,11 +98,10 @@ class Ticket {
     //----------------------------------------------------------------
     //RENAME TICKET
     //----------------------------------------------------------------
-    async rename(client, message,) {
+    async rename(message, channelName) {
           const args = message.content.slice(prefix.length).split(/ +/);
-        if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('You can not preform this action.');
-        const name = args.splice(0).join("-")
-        message.channel.setName(name)
+        if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('You cannot preform this action.');
+        message.channel.setName(channelName)
     }
     //----------------------------------------------------------------
     //DELETE TICKET
