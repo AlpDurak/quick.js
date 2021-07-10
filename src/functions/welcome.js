@@ -7,7 +7,7 @@ async function welcomeMessage(client, message, member, channelID, embed, CustomM
     if (!client) throw new TypeError("\"client\" is not defined.")
     const channel = client.guilds.channels.cache.get(channelID)
 
-    if (embed = true) {
+    if (embed == true) {
         const WelcomeEmbed = new Discord.MessageEmbed()
             .setAuthor(member.username)
             .setImage(member.avatarURL())
@@ -20,7 +20,7 @@ async function welcomeMessage(client, message, member, channelID, embed, CustomM
         }
         channel.send(WelcomeEmbed)
 
-    } else if (embed = false) {
+    } else if (embed == false) {
         if (CustomMessage) {
             channel.send(CustomMessage)
         } else {
