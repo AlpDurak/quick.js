@@ -98,7 +98,8 @@ class Ticket {
     //----------------------------------------------------------------
     //RENAME TICKET
     //----------------------------------------------------------------
-    async rename(client, message, args) {
+    async rename(client, message,) {
+          const args = message.content.slice(prefix.length).split(/ +/);
         if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('You can not preform this action.');
         const name = args.splice(0).join("-")
         message.channel.setName(name)
