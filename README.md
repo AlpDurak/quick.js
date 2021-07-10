@@ -155,7 +155,7 @@ client.on("message", message => {
     if (message.author.bot || !message.content.startsWith(prefix)) return;
 
     if (command === "ticket") {
-        ticket.new(client, message, args, 'STAFF ROLE ID HERE') 
+        ticket.new(message, 'STAFF ROLE ID HERE', {title: 'New Ticket', description: 'Welcome to this ticket!', color: "RED"}) 
     }
 });
 client.login("TOKEN");
