@@ -72,6 +72,7 @@ class Moderation {
     //Unban
     //----------------------------------------------------------------
     async unban(message, userID) {
+
           const args = message.content.slice(prefix.length).split(/ +/);
         if (!userID) return message.channel.send("You need to porvide a user ID");
         message.guild.members.unban(userID).then(() => {
