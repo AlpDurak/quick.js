@@ -1,5 +1,6 @@
+const Discord = require('discord.js')
 class Logs {
-    async join(Discord, client, member, channelID) {
+    async join(client, member, channelID) {
         if (!Discord) throw new TypeError("\"Discord\" is not defined")
         if (!client) throw new TypeError("\"client\" is not defined")
         if (!member) throw new TypeError("\"member\" is not defined")
