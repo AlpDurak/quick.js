@@ -7,7 +7,7 @@ class Moderation {
         if (!message) throw new TypeError("\"message\" is not defined.")
         if (!userID) throw new TypeError("\"userID\" has not been provided.")
 
-        if (message.member.permissions.has("BAN_MEMBERS")) {
+        if (!message.member.permissions.has("BAN_MEMBERS")) {
             return message.channel.send("You do not have permission to ban members.")
         }
 
@@ -72,8 +72,6 @@ class Moderation {
     //Unban
     //----------------------------------------------------------------
     async unban(message, userID) {
-
-          const args = message.content.slice(prefix.length).split(/ +/);
         if (!userID) return message.channel.send("You need to porvide a user ID");
         message.guild.members.unban(userID).then(() => {
             const unbanEmbed = new Discord.MessageEmbed()
