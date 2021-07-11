@@ -3,7 +3,7 @@
 //----------------------------------------------------------------
 module.exports.welcome = require('./functions/welcome');
 module.exports.memberCount = require('./functions/membercount');
-module.exports.blacklistMessage = require('./functions/blacklist');
+module.exports.blacklistWords = require('./functions/blacklist');
 module.exports.antiSwear = require('./functions/antiswear');
 
 //----------------------------------------------------------------

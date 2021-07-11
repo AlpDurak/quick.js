@@ -6,6 +6,7 @@
     * [Images](https://www.npmjs.com/package/quick.djs#images)
     * [Games](https://www.npmjs.com/package/quick.djs#games)
     * [Tickets](https://www.npmjs.com/package/quick.djs#ticket)
+    * [Other](https://www.npmjs.com/package/quick.djs#other)
 * [Contribute](https://www.npmjs.com/package/quick.djs#contribute)
 * [Credits](https://www.npmjs.com/package/quick.djs#credits)
 
@@ -137,6 +138,16 @@ Ticket Functions:
 | new()    	| Creates a new Ticket.    	| quick.new(message, 'staff role id'  {title: 'title', description: 'embed description', color: 'hex color'}) 	|
 | rename() 	| Renames the channel name 	| quick.rename(message, 'channelName')  //"message" is what you have defined "message" as in your message event. 	|
 | delete() 	| Deletes the channel      	| quick.delete(message) //"message" is what you have defined "message" as in your message event.    
+
+#### Other
+| Syntax           	| Description                                             	| Example                                                                                                                                       	|
+|------------------	|---------------------------------------------------------	|-----------------------------------------------------------------------------------------------------------------------------------------------	|
+| antiSwear()      	| Prevents people from swearing.                          	| quick.antiSwear(message, "no swearing message") //"message" is your message event parameter name                                              	|
+| blacklistWords() 	| Blacklist words that people can't say.                  	| quick.blacklistWords(message, "blacklisted word message" {words: ["word1", "word2", "etc"]}) //"message" is your message event parameter name 	|
+| memberCount()    	| Display a member count of your server.                  	| quick.memberCount(client, member, channelID)                                                                                                  	|
+| welcome()        	| Displays a welcome message when users join your server. 	| quick.welcome(client, message, channelID, GuildMember, embed = true, "custom join message"                                                    	|
+
+**These do not have any classes and are base functions you can use without importing a class**
 
 # Contribute
 Feeling good and want to contribute? Join the [Discord server](https://discord.gg/qwQfZsZ878)
