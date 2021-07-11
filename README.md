@@ -41,13 +41,13 @@ client.on("ready", ready => {
 });
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
-client.on("message", message => {
+client.on("message", async message => {
     if (message.author.bot || !message.content.startsWith(prefix)) return;
 
     if (command === "ban") {
         const userID = message.mentions.members.first().id; // Make sure to use the "members" property and not users.
         const reason = args.slice(1).join(" ");
-        moderation.ban(message, userID, {title: "User has been banned", reason: reason, color: "RED"});
+        await moderation.ban(message, userID, {title: "User has been banned", reason: reason, color: "RED"});
         //Will also send a message when banned.
     }
 });

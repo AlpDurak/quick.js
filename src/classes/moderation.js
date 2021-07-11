@@ -12,10 +12,10 @@ class Moderation {
         }
 
         try {
-            const user = message.guild.members.cache.get(userID)
+            const user = await message.guild.members.fetch(userID)
             if (!user.bannable) return message.channel.send('I could not ban that member due to role hierarchy')
 
-            user.ban()
+            await user.ban()
             if (!options) {
                 return message.channel.send("User has been banned");
             }
@@ -30,6 +30,7 @@ class Moderation {
             
         } catch (e) {
             console.log(e);
+            return message.channel.send("Error while banning the member.")
         }
 
 
@@ -48,10 +49,10 @@ class Moderation {
         }
 
         try {
-            const user = message.guild.members.cache.get(userID)
+            const user = await message.guild.members.fetch(userID)
             if (!user.kickable) return message.channel.send('I could not kick that member due to role hierarchy')
 
-            user.kick()
+            await user.kick()
             if (!options) {
                 return message.channel.send("User has been kicked");
             }
@@ -73,7 +74,7 @@ class Moderation {
     //----------------------------------------------------------------
     async unban(message, userID) {
         if (!userID) return message.channel.send("You need to porvide a user ID");
-        message.guild.members.unban(userID).then(() => {
+       await message.guild.members.unban(userID).then(() => {
             const unbanEmbed = new Discord.MessageEmbed()
                 .setTitle("Member Unbanned")
                 .setDescription(
