@@ -145,7 +145,9 @@ Ticket Functions:
 | antiSwear()      	| Prevents people from swearing.                          	| quick.antiSwear(message, "no swearing message") //"message" is your message event parameter name                                              	|
 | blacklistWords() 	| Blacklist words that people can't say.                  	| quick.blacklistWords(message, "blacklisted word message" {words: ["word1", "word2", "etc"]}) //"message" is your message event parameter name 	|
 | memberCount()    	| Display a member count of your server.                  	| quick.memberCount(client, member, channelID)                                                                                                  	|
-| welcome()        	| Displays a welcome message when users join your server. 	| quick.welcome(client, message, channelID, GuildMember, embed = true, "custom join message"                                                    	|
+| welcome()        	| Displays a welcome message when users join your server. 	| quick.welcome(client, message, channelID, GuildMember, embed = true, "custom join message"
+
+| embed()           | Send a embed that you can construct easily.               | quick.embed(message, {title: "Title", description: "Description", color: "RED", footer: "Made with quick.djs", timestamp: true,  author: "quick.djs devs" url: "https://discord.gg/qwQfZsZ878", thumbnail: "https://prnt.sc/1ae892z", image: "https://prnt.sc/1ae8htl"})                                                   	|
 
 **These do not have any classes and are base functions you can use without importing a class**
 
