@@ -40,11 +40,11 @@ const prefix = "!"
 client.on("ready", ready => {
     console.log("Online!");
 });
-    const args = message.content.slice(prefix.length).trim().split(/ +/);
-    const command = args.shift().toLowerCase();
+   
 client.on("message", async message => {
     if (message.author.bot || !message.content.startsWith(prefix)) return;
-
+ const args = message.content.slice(prefix.length).trim().split(/ +/);
+    const command = args.shift().toLowerCase();
     if (command === "ban") {
         const userID = message.mentions.members.first().id; // Make sure to use the "members" property and not users.
         const reason = args.slice(1).join(" ");
@@ -126,7 +126,7 @@ client.on("message", message => {
 
  const args = message.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
-    
+
     if (command === "ticket") {
         ticket.new(message, 'STAFF ROLE ID HERE', {title: 'New Ticket', description: 'Welcome to this ticket!', color: "RED"}) 
     }
