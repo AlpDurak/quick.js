@@ -40,7 +40,8 @@ Featuring so many new things.
 
 # Functions and Classes
 
-#### Moderation
+## Moderation
+
 ```js
 const Discord = require('discord.js');
 const client = new Discord.Client();
@@ -52,20 +53,21 @@ const prefix = "!"
 client.on("ready", ready => {
     console.log("Online!");
 });
-    const args = message.content.slice(prefix.length).trim().split(/ +/);
-    const command = args.shift().toLowerCase();
+   
 client.on("message", async message => {
     if (message.author.bot || !message.content.startsWith(prefix)) return;
-
+ const args = message.content.slice(prefix.length).trim().split(/ +/);
+    const command = args.shift().toLowerCase();
     if (command === "ban") {
-        const userID = message.mentions.members.first().id; // Make sure to use the "members" property and not users.
+        const userID = message.mentions.users.first().id; // Make sure to use the "members" property and not users.
         const reason = args.slice(1).join(" ");
         await moderation.ban(message, userID, {title: "User has been banned", reason: reason, color: "RED"});
         //Will also send a message when banned.
     }
 });
 client.login("TOKEN");
-``` 
+```
+
 Moderation Functions:
 | Syntax  	| Description     	| Example                                                                                                                                             	|
 |---------	|-----------------	|-----------------------------------------------------------------------------------------------------------------------------------------------------	|
@@ -75,8 +77,8 @@ Moderation Functions:
 
 **More to come!**
 
+## Images
 
-#### Images
 ```js
         //Basic Syntax:
         const { Images } = require("quick.djs")
@@ -86,6 +88,7 @@ Moderation Functions:
         //Will console log the image URL.
 
 ```
+
 Image Functions:
 | Syntax   	| Description              	|
 |----------	|--------------------------	|
@@ -99,7 +102,9 @@ Image Functions:
 | cuddle() 	| Sends a cuddle image/gif 	|
 | wafiu()  	| Sends a wafiu image/gif  	|
 **PLEASE NOTE: These do *not* send the image automatically, it only returns the image URL and then from there, you can do things with it.**
-###### Games
+
+## Games
+
 ```js
 //Basic Syntax
 
@@ -115,11 +120,13 @@ client.on("message", message => {
     }
 })
 ```
+
 | Syntax  	| Description                   	| Example                                                                   	|
 |---------	|-------------------------------	|---------------------------------------------------------------------------	|
 | snake() 	| Setup a fun little snake game 	| quick.snake(message) //"message" is your message event parameter name 	|
 
-#### Ticket
+## Ticket
+
 ```js
 const Discord = require('discord.js');
 const client = new Discord.Client();
@@ -131,11 +138,13 @@ client.on("ready", ready => {
     console.log("Online!");
 });
     
-    const args = message.content.slice(prefix.length).trim().split(/ +/);
-    const command = args.shift().toLowerCase();
+   
 
 client.on("message", message => {
     if (message.author.bot || !message.content.startsWith(prefix)) return;
+
+ const args = message.content.slice(prefix.length).trim().split(/ +/);
+    const command = args.shift().toLowerCase();
 
     if (command === "ticket") {
         ticket.new(message, 'STAFF ROLE ID HERE', {title: 'New Ticket', description: 'Welcome to this ticket!', color: "RED"}) 
@@ -143,6 +152,7 @@ client.on("message", message => {
 });
 client.login("TOKEN");
 ```
+
 Ticket Functions:
 
 | Syntax   	| Description              	| Example                                                                                                           	|
@@ -151,19 +161,25 @@ Ticket Functions:
 | rename() 	| Renames the channel name 	| quick.rename(message, 'channelName')  //"message" is what you have defined "message" as in your message event. 	|
 | delete() 	| Deletes the channel      	| quick.delete(message) //"message" is what you have defined "message" as in your message event.    
 
-#### Other
+## Other
+
 | Syntax           	| Description                                             	| Example                                                                                                                                       	|
 |------------------	|---------------------------------------------------------	|-----------------------------------------------------------------------------------------------------------------------------------------------	|
 | antiSwear()      	| Prevents people from swearing.                          	| quick.antiSwear(message, "no swearing message") //"message" is your message event parameter name                                              	|
 | blacklistWords() 	| Blacklist words that people can't say.                  	| quick.blacklistWords(message, "blacklisted word message" {words: ["word1", "word2", "etc"]}) //"message" is your message event parameter name 	|
 | memberCount()    	| Display a member count of your server.                  	| quick.memberCount(client, member, channelID)                                                                                                  	|
-| welcome()        	| Displays a welcome message when users join your server. 	| quick.welcome(client, message, channelID, GuildMember, embed = true, "custom join message"                                                    	|
+| welcome()        	| Displays a welcome message when users join your server. 	| quick.welcome(client, message, channelID, GuildMember, embed = true, "custom join message"
+| embed()           | Send a embed that you can construct easily.               | quick.embed(message, {title: "Title", description: "Description", color: "RED", footer: "Made with quick.djs", timestamp: true,  author: "quick.djs devs", url: "https://discord.gg/qwQfZsZ878", thumbnail: "https://prnt.sc/1ae892z", image: "https://prnt.sc/1ae8htl"})
 
-**These do not have any classes and are base functions you can use without importing a class**
+![embed function example image](https://media.discordapp.net/attachments/735521586295078944/863957946089472030/unknown.png)
+
+*These do not have any classes and are base functions you can use without importing a class*
 
 # Contribute
+
 Feeling good and want to contribute? Join the [Discord server](https://discord.gg/qwQfZsZ878)
 
 ## Credits
+
 * [anime-images-api](https://www.npmjs.com/package/anime-images-api) - The package for the Images.
 * [snakecord](https://www.npmjs.com/package/snakecord) - The package for the snake game.
