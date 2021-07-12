@@ -46,7 +46,7 @@ client.on("message", async message => {
  const args = message.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
     if (command === "ban") {
-        const userID = message.mentions.members.first().id; // Make sure to use the "members" property and not users.
+        const userID = message.mentions.users.first().id; // Make sure to use the "members" property and not users.
         const reason = args.slice(1).join(" ");
         await moderation.ban(message, userID, {title: "User has been banned", reason: reason, color: "RED"});
         //Will also send a message when banned.
