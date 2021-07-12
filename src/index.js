@@ -5,6 +5,8 @@ module.exports.welcome = require('./functions/welcome');
 module.exports.memberCount = require('./functions/membercount');
 module.exports.blacklistWords = require('./functions/blacklist');
 module.exports.antiSwear = require('./functions/antiswear');
+module.exports.embed = require('./functions/embed');
+
 
 //----------------------------------------------------------------
 //CLASSES

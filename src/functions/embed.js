@@ -5,7 +5,7 @@ async function embed(message, options = {}) {
     const embed = new Discord.MessageEmbed()
     try {
         if (options.title) embed.setTitle(options.title)
-        if (options.description) embed.setDescrtiption(options.description)
+        if (options.description) embed.setDescription(options.description)
         if (options.color) embed.setColor(options.color)
         if (options.footer) embed.setFooter(options.footer)
         if (options.timestamp) embed.setTimestamp()
