@@ -149,6 +149,7 @@ Ticket Functions:
 | embed()           | Send a embed that you can construct easily.               | quick.embed(message, {title: "Title", description: "Description", color: "RED", footer: "Made with quick.djs", timestamp: true,  author: "quick.djs devs", url: "https://discord.gg/qwQfZsZ878", thumbnail: "https://prnt.sc/1ae892z", image: "https://prnt.sc/1ae8htl"})
 
 ![embed function example image](https://media.discordapp.net/attachments/735521586295078944/863957946089472030/unknown.png)
+
 **These do not have any classes and are base functions you can use without importing a class**
 
 # Contribute
