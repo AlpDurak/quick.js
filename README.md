@@ -1,6 +1,7 @@
 # Table of Contents
 * [About](https://www.npmjs.com/package/quick.djs#about)
 * [Installation](https://www.npmjs.com/package/quick.djs#installation)
+* [Change Log](https://www.npmjs.com/package/quick.djs#change-log)
 * [Functions and Classes](https://www.npmjs.com/package/quick.djs#functions-and-classes)
     * [Moderation](https://www.npmjs.com/package/quick.djs#moderation)
     * [Images](https://www.npmjs.com/package/quick.djs#images)
@@ -26,9 +27,20 @@ or
 yarn add quick.djs
 ```
 
+# Change Log
+Introducing, *quick.djs v2.0.0*.
+
+Featuring so many new things.
+
+* Leveling
+* Logs
+* Cooldown
+* More Games
+* Image Updates
+
 # Functions and Classes
 
-###### Moderation
+#### Moderation
 ```js
 const Discord = require('discord.js');
 const client = new Discord.Client();
@@ -64,7 +76,7 @@ Moderation Functions:
 **More to come!**
 
 
-###### Images
+#### Images
 ```js
         //Basic Syntax:
         const { Images } = require("quick.djs")
@@ -107,7 +119,7 @@ client.on("message", message => {
 |---------	|-------------------------------	|---------------------------------------------------------------------------	|
 | snake() 	| Setup a fun little snake game 	| quick.snake(message) //"message" is your message event parameter name 	|
 
-###### Ticket
+#### Ticket
 ```js
 const Discord = require('discord.js');
 const client = new Discord.Client();
