@@ -154,6 +154,7 @@ Ticket Functions:
 
 # Contribute
 Feeling good and want to contribute? Join the [Discord server](https://discord.gg/qwQfZsZ878)
+
 ## Credits
 * [anime-images-api](https://www.npmjs.com/package/anime-images-api) - The package for the Images.
 * [snakecord](https://www.npmjs.com/package/snakecord) - The package for the snake game.
