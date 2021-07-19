@@ -18,8 +18,8 @@ async function massEmoji(message, options = {}) {
 
         if (defaultEmoji !== null && customEmoji !== null) {
             const emojiLimit = options.emojiLimit ? parseInt(options.emojiLimit) !== NaN ? parseInt(options.emojiLimit) : 5 : 5;
-            if (defaultEmoji.length >= emojiLimit) return massEmojiUsage = true;
-            if (customEmoji.length >= emojiLimit) return massEmojiUsage = true;
+            if (defaultEmoji.length >= emojiLimit) massEmojiUsage = true;
+            if (customEmoji.length >= emojiLimit) massEmojiUsage = true;
         }
 
         if (massEmojiUsage) {
