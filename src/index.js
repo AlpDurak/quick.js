@@ -7,6 +7,7 @@ module.exports.blacklistWords = require('./functions/blacklist');
 module.exports.antiSwear = require('./functions/antiswear');
 module.exports.embed = require('./functions/embed');
 module.exports.antiMassEmoji = require('./functions/massemoji')
+module.exports.antiNsfwEmoji = require('./functions/antiNsfwEmoji')
 
 
 //----------------------------------------------------------------

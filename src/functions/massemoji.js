@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 
-async function massEmoji(message, options = {}) {
+async function antiMassEmoji(message, options = {}) {
 
     const embed = new Discord.MessageEmbed()
 
@@ -44,4 +44,4 @@ async function massEmoji(message, options = {}) {
     }
 }
 
-module.exports = massEmoji;
+module.exports = antiMassEmoji;
