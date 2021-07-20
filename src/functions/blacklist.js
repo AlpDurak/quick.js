@@ -8,6 +8,7 @@ async function blacklistWords(message, blacklistMessage = "Do not send that word
     let deleting = false;
     let Collection = options.words
     
+    // does this work?
 
     await Promise.all(
         splitContent.map((content) => {
